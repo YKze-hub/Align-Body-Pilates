@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Align Body Pilates Studio — Bangkok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#EFE8D9;
+    --ivory-deep:#E7DFCC;
+    --brown:#2B231C;
+    --brown-soft:#4A3F33;
+    --brass:#AD8752;
+    --brass-light:#C9A876;
+    --sage:#6E7358;
+    --line:rgba(43,35,28,0.14);
+    --white:#FBF9F4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--brown);
+    font-family:'Work Sans',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+    color:var(--brown);
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  img,svg{display:block;max-width:100%;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(239,232,217,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{height:22px;width:auto;flex-shrink:0;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15;}
+  .brand-text .name{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:0.01em;}
+  .brand-text .sub{font-size:11px;letter-spacing:0.08em;color:var(--brown-soft);}
+  .navlinks{display:flex;align-items:center;gap:36px;font-size:14.5px;}
+  .navlinks a{color:var(--brown-soft);transition:color .2s;}
+  .navlinks a:hover{color:var(--brass);}
+  .nav-cta{
+    padding:10px 20px;border:1px solid var(--brown);border-radius:2px;
+    font-size:13.5px;transition:background .2s,color .2s;
+  }
+  .nav-cta:hover{background:var(--brown);color:var(--ivory);}
+  .navlinks-mobile{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:76px 0 96px;}
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(38px,4.6vw,58px);
+    line-height:1.08;
+    max-width:11ch;
+  }
+  .hero p.lede{
+    margin-top:24px;font-size:17.5px;color:var(--brown-soft);max-width:42ch;
+  }
+  .hero-note{
+    margin-top:28px;font-size:13.5px;color:var(--brown-soft);
+    display:flex;align-items:center;gap:8px;
+  }
+  .hero-note .dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0;}
+  .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--brown);color:var(--ivory);padding:14px 26px;
+    font-size:14.5px;border-radius:2px;transition:background .2s;
+    border:1px solid var(--brown);
+  }
+  .btn-primary:hover{background:var(--brass);border-color:var(--brass);}
+  .btn-secondary{
+    padding:14px 26px;font-size:14.5px;border:1px solid var(--brown);border-radius:2px;
+    transition:background .2s,color .2s;
+  }
+  .btn-secondary:hover{background:var(--brown);color:var(--ivory);}
+
+  .photo-frame{
+    position:relative;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
+    background:
+      repeating-linear-gradient(135deg, rgba(43,35,28,0.05) 0 2px, transparent 2px 14px),
+      linear-gradient(155deg, #DED2B4 0%, #C9B98F 55%, #AD8752 100%);
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);
+  }
+  .photo-frame .frame-inner{
+    text-align:center;color:var(--white);
+  }
+  .photo-frame svg{width:34px;height:34px;margin:0 auto 10px;opacity:0.85;}
+  .photo-frame .label{font-size:12.5px;letter-spacing:0.04em;opacity:0.9;}
+  .photo-frame .sub-label{font-size:11px;opacity:0.65;margin-top:4px;}
+
+  /* ---------- THREE WAYS ---------- */
+  .pillars{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .pillars-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+  }
+  .pillar{
+    padding:44px 40px;position:relative;
+  }
+  .pillar:not(:last-child){border-right:1px solid var(--line);}
+  .pillar .num{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--brass);}
+  .pillar h3{font-size:22px;margin-top:10px;font-weight:500;}
+  .pillar p{margin-top:10px;font-size:14.5px;color:var(--brown-soft);max-width:32ch;}
+  .pillar .go{display:inline-block;margin-top:16px;font-size:13px;border-bottom:1px solid var(--brass);color:var(--brass-light);color:#8C6B3B;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:56ch;margin-bottom:56px;}
+  .section-head .kicker{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--brass);margin-bottom:6px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .section-head p{margin-top:14px;font-size:16px;color:var(--brown-soft);}
+
+  /* ---------- EQUIPMENT ---------- */
+  .equipment{background:var(--ivory-deep);}
+  .equip-list{display:flex;flex-direction:column;}
+  .equip-row{
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;align-items:center;
+    padding:40px 0;border-top:1px solid var(--line);
+  }
+  .equip-row:last-child{border-bottom:1px solid var(--line);}
+  .equip-row.reverse{grid-template-columns:1.1fr 0.9fr;}
+  .equip-row.reverse .equip-photo{order:2;}
+  .equip-photo{
+    aspect-ratio:16/11;border-radius:2px;position:relative;overflow:hidden;
+    background:linear-gradient(150deg,#DED2B4,#B99E6C);
+    display:flex;align-items:center;justify-content:center;border:1px solid var(--line);
+  }
+  .equip-photo .frame-inner{color:var(--white);text-align:center;}
+  .equip-photo svg{width:28px;height:28px;margin:0 auto 8px;opacity:0.85;}
+  .equip-photo .label{font-size:12px;opacity:0.9;letter-spacing:0.03em;}
+  .equip-index{font-family:'Fraunces',serif;font-style:italic;color:var(--brass);font-size:14px;}
+  .equip-name{font-size:26px;margin-top:8px;}
+  .equip-desc{margin-top:12px;font-size:15px;color:var(--brown-soft);max-width:40ch;}
+  .equip-tag{
+    display:inline-block;margin-top:14px;font-size:11.5px;letter-spacing:0.04em;
+    color:var(--sage);border:1px solid var(--sage);padding:4px 10px;border-radius:12px;
+  }
+
+  /* ---------- SESSIONS / PRICING ---------- */
+  .pricing-tables{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;}
+  .price-card{border:1px solid var(--line);}
+  .price-card .price-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:20px 24px;border-bottom:1px solid var(--line);background:var(--ivory-deep);
+  }
+  .price-head h3{font-size:19px;}
+  .price-head span{font-size:12px;color:var(--brown-soft);}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  th{
+    text-align:left;font-weight:500;font-size:12px;color:var(--brown-soft);
+    padding:12px 24px;border-bottom:1px solid var(--line);
+  }
+  td{padding:16px 24px;border-bottom:1px solid var(--line);vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  td.note{color:var(--brown-soft);font-size:12.5px;max-width:22ch;}
+  td.thb{font-family:'Fraunces',serif;font-size:16px;}
+  td.thb .per{display:block;font-family:'Work Sans',sans-serif;font-size:11.5px;color:var(--brown-soft);margin-top:2px;}
+  .best-value{color:var(--sage);font-weight:500;}
+
+  /* ---------- STUDIO RENTAL ---------- */
+  .rental{background:var(--brown);color:var(--ivory);}
+  .rental .section-head h2,.rental .section-head .kicker{color:var(--ivory);}
+  .rental .section-head p{color:#C9BFAF;}
+  .rental-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(239,232,217,0.15);border:1px solid rgba(239,232,217,0.15);}
+  .rate-block{background:var(--brown);padding:36px 30px;}
+  .rate-block .hrs{font-size:12.5px;color:#C9BFAF;letter-spacing:0.02em;}
+  .rate-block .thb{font-family:'Fraunces',serif;font-size:40px;margin-top:10px;}
+  .rate-block .thb small{font-size:14px;font-family:'Work Sans',sans-serif;color:#C9BFAF;}
+  .rate-block .tag{margin-top:10px;font-size:12px;color:var(--brass-light);}
+  .rental-details{
+    margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;
+  }
+  .rental-details .col h4{font-size:14px;color:var(--brass-light);font-weight:500;margin-bottom:12px;letter-spacing:0.02em;}
+  .rental-details ul{list-style:none;font-size:14.5px;color:#DCD3C0;}
+  .rental-details li{padding:6px 0;border-bottom:1px solid rgba(239,232,217,0.1);}
+  .rental-cta{margin-top:36px;}
+
+  /* ---------- BOOK / CONTACT ---------- */
+  .book-single{max-width:640px;margin:0 auto;}
+  .book-single .section-head{margin:0 auto 44px;text-align:center;max-width:50ch;}
+  .book-single .section-head .kicker{margin-left:auto;margin-right:auto;}
+  .line-options{border-top:1px solid var(--line);}
+  .line-option{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 4px;border-bottom:1px solid var(--line);
+    font-family:'Fraunces',serif;font-size:19px;transition:padding-left .2s,color .2s;
+  }
+  .line-option:hover{padding-left:10px;color:#0AA84A;}
+  .line-option .lo-sub{
+    font-family:'Work Sans',sans-serif;font-size:13px;color:var(--brown-soft);
+    display:block;margin-top:4px;
+  }
+  .line-option .lo-arrow{font-family:'Work Sans',sans-serif;font-size:18px;transition:transform .2s;}
+  .line-option:hover .lo-arrow{transform:translateX(4px);}
+  .book-line{
+    margin-top:36px;display:inline-flex;align-items:center;gap:10px;
+    padding:14px 26px;background:#06C755;color:#fff;border-radius:2px;font-size:14.5px;
+    transition:opacity .2s;
+  }
+  .book-line:hover{opacity:0.88;}
+  .book-line svg{width:18px;height:18px;}
+  .book-cta-wrap{text-align:center;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:56px 0 40px;}
+  .footer-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  .footer-brand .name{font-family:'Fraunces',serif;font-size:20px;}
+  .footer-brand .sub{font-size:12.5px;color:var(--brown-soft);margin-top:4px;}
+  .footer-links{display:flex;gap:28px;font-size:13.5px;color:var(--brown-soft);}
+  .footer-bottom{
+    margin-top:36px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12px;color:var(--brown-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media(max-width:860px){
+    .navlinks{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero .photo-frame{order:-1;aspect-ratio:16/10;}
+    .pillars-grid{grid-template-columns:1fr;}
+    .pillar:not(:last-child){border-right:none;border-bottom:1px solid var(--line);}
+    .equip-row,.equip-row.reverse{grid-template-columns:1fr;}
+    .equip-row.reverse .equip-photo{order:0;}
+    .pricing-tables{grid-template-columns:1fr;}
+    .rental-grid{grid-template-columns:1fr;}
+    .rental-details{grid-template-columns:1fr;}
+    .line-option{font-size:17px;}
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 363.424064 558.902144" xmlns="http://www.w3.org/2000/svg"><g transform="translate(-10.423379,569.403316) scale(0.1,-0.1)" fill="var(--brass)" stroke="none"><path d="M2223 5688 c-6 -7 -41 -74 -78 -148 -91 -181 -202 -381 -356 -641
+-190 -321 -194 -330 -193 -408 0 -88 26 -141 204 -421 372 -586 834 -1378
+1018 -1746 149 -299 221 -640 194 -921 -32 -328 -155 -576 -412 -833 -224
+-223 -445 -346 -730 -407 -117 -24 -399 -25 -523 0 -169 34 -372 119 -522 219
+-118 79 -284 244 -361 358 -151 228 -224 466 -224 736 0 217 48 389 160 574
+18 28 12 24 -30 -20 -211 -225 -308 -580 -249 -910 19 -105 71 -255 121 -352
+170 -327 484 -543 920 -635 124 -26 148 -28 373 -28 157 0 264 5 310 13 264
+50 424 101 620 196 589 289 1034 850 1205 1520 57 226 74 378 67 626 -9 334
+-69 601 -213 940 -90 210 -182 370 -560 977 -220 351 -322 534 -567 1013 -163
+319 -161 315 -174 298z"/></g></svg>
+      <span class="brand-text">
+        <span class="name">Align Body</span>
+        <span class="sub">Pilates · Movement · Space</span>
+      </span>
+    </a>
+    <div class="navlinks">
+      <a href="#equipment">Equipment</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#rental">Studio Rental</a>
+      <a href="#book" class="nav-cta">Book a session</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Three ways to move, one space to grow.</h1>
+      <p class="lede">Group sessions, private training, and studio rental — inside one considered room in Bangkok, fully equipped with BASI Systems apparatus.</p>
+      <div class="hero-cta">
+        <a href="#book" class="btn-primary">Reserve a session</a>
+        <a href="#rental" class="btn-secondary">View studio rental</a>
+      </div>
+      <div class="hero-note"><span class="dot"></span>By appointment only — message us on LINE to check availability.</div>
+    </div>
+    <div class="photo-frame">
+      <div class="frame-inner">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="12" rx="1" stroke="white" stroke-width="1.3"/><path d="M8 7V5.5C8 4.7 8.7 4 9.5 4H14.5C15.3 4 16 4.7 16 5.5V7" stroke="white" stroke-width="1.3"/><circle cx="12" cy="13" r="2.6" stroke="white" stroke-width="1.3"/></svg>
+        <div class="label">Studio photo</div>
+        <div class="sub-label">Reformer room — replace with your own image</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap pillars-grid">
+    <div class="pillar">
+      <div class="num">i.</div>
+      <h3>Group Sessions</h3>
+      <p>Reformer classes in a small group, from ฿500 for a first trial. Every class needs at least two people to run.</p>
+      <a href="#sessions" class="go">See group pricing</a>
+    </div>
+    <div class="pillar">
+      <div class="num">ii.</div>
+      <h3>Private Training</h3>
+      <p>One-to-one or duo coaching across the full BASI equipment line, paced to your body and your goals.</p>
+      <a href="#sessions" class="go">See private &amp; duo pricing</a>
+    </div>
+    <div class="pillar">
+      <div class="num">iii.</div>
+      <h3>Studio Rental</h3>
+      <p>Rent the room by the hour — for your own sessions, a shoot, a workshop, or a small event.</p>
+      <a href="#rental" class="go">See rental rates</a>
+    </div>
+  </div>
+</section>
+
+<section class="equipment" id="equipment">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">The equipment</div>
+      <h2>Five machines, one system.</h2>
+      <p>Every apparatus in the studio is BASI Systems — the classical Pilates lineage, built for precision, resistance, and control.</p>
+    </div>
+
+    <div class="equip-list">
+      <div class="equip-row">
+        <div class="equip-photo"><img src="images/reformer.jpg" alt="Reformer" style="width:100%;height:100%;object-fit:cover"></div></div></div>
+        <div>
+          <div class="equip-index">01</div>
+          <h3 class="equip-name">Reformer</h3>
+          <p class="equip-desc">The core apparatus of the method. A sliding carriage and adjustable springs build full-body strength, control, and alignment through resistance.</p>
+          <span class="equip-tag">Full body</span>
+        </div>
+      </div>
+
+      <div class="equip-row reverse">
+        <div class="equip-photo"><img src="images/Cadillac.jpg" alt="Cadillac / Trapeze Table" style="width:100%;height:100%;object-fit:cover"></div></div></div>
+        <div>
+          <div class="equip-index">02</div>
+          <h3 class="equip-name">Cadillac / Trapeze Table</h3>
+          <p class="equip-desc">Bars, straps, and springs suspended over a table — used for assisted stretching, suspension work, and rehab-focused movement.</p>
+          <span class="equip-tag">Mobility &amp; rehab</span>
+        </div>
+      </div>
+
+      <div class="equip-row">
+        <div class="equip-photo"><img src="images/F2-arm-chair.jpg" alt="F2 Arm Chair" style="width:100%;height:100%;object-fit:cover"></div></div></div>
+        <div>
+          <div class="equip-index">03</div>
+          <h3 class="equip-name">F2 Arm Chair</h3>
+          <p class="equip-desc">A compact resistance station built for the arms, shoulders, and core — sharpening stability in a small footprint.</p>
+          <span class="equip-tag">Upper body</span>
+        </div>
+      </div>
+
+      <div class="equip-row reverse">
+        <div class="equip-photo"><img src="images/Chair.jpg" alt="Chair" style="width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div class="equip-index">04</div>
+          <h3 class="equip-name">Chair</h3>
+          <p class="equip-desc">A single spring-loaded step that trains balance, strength, and functional movement in a standing position.</p>
+          <span class="equip-tag">Balance &amp; strength</span>
+        </div>
+      </div>
+
+      <div class="equip-row"> 
+        <div class="equip-photo"><img src="images/spine_corrector.jpg" alt="Spine Corrector" style="width:100%;height:100%;object-fit:cover"></div>
+        <div>
+          <div class="equip-index">05</div>
+          <h3 class="equip-name">Spine Corrector</h3>
+          <p class="equip-desc">A curved barrel that supports spinal articulation — opening the chest, lengthening the spine, and refining posture.</p>
+          <span class="equip-tag">Posture &amp; flexibility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sessions">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Sessions</div>
+      <h2>Private, duo, and group pricing.</h2>
+      <p>Private and duo sessions are booked with an instructor one-to-one or in pairs. Group sessions run with a minimum of two people signed up before the class is confirmed.</p>
+    </div>
+
+    <div class="pricing-tables">
+      <div class="price-card">
+        <div class="price-head"><h3>Private &amp; Duo</h3><span>THB</span></div>
+        <table>
+          <tr><th>Package</th><th>Private</th><th>Duo (per person)</th><th>Notes</th></tr>
+          <tr>
+            <td>First Trial</td>
+            <td class="thb">฿1,500</td>
+            <td class="thb">฿1,300</td>
+            <td class="note">One-time offer, new clients only</td>
+          </tr>
+          <tr>
+            <td>Drop-In</td>
+            <td class="thb">฿2,200</td>
+            <td class="thb">฿1,700</td>
+            <td class="note">Pay per session</td>
+          </tr>
+          <tr>
+            <td>5 Sessions</td>
+            <td class="thb">฿10,000<span class="per">฿2,000 / session</span></td>
+            <td class="thb">฿7,500<span class="per">฿1,500 / session</span></td>
+            <td class="note">Valid one month</td>
+          </tr>
+          <tr>
+            <td>10 Sessions</td>
+            <td class="thb">฿19,000<span class="per">฿1,900 / session</span></td>
+            <td class="thb">฿14,000<span class="per">฿1,400 / session</span></td>
+            <td class="note best-value">Valid 2 months — best value</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="price-card">
+        <div class="price-head"><h3>Group</h3><span>THB</span></div>
+        <table>
+          <tr><th>Package</th><th>Price</th><th>Notes</th></tr>
+          <tr><td>First Trial</td><td class="thb">฿500</td><td class="note">New clients only</td></tr>
+          <tr><td>Drop-In</td><td class="thb">฿800</td><td class="note">Pay per session</td></tr>
+          <tr><td>5 Sessions</td><td class="thb">฿3,500<span class="per">฿700 / session</span></td><td class="note">Valid one month</td></tr>
+          <tr><td>10 Sessions</td><td class="thb">฿6,000<span class="per">฿600 / session</span></td><td class="note best-value">Valid 2 months — best value</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rental" id="rental">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Studio rental</div>
+      <h2>More than a studio — a space for every occasion.</h2>
+      <p>Private, clean, and fully equipped. Book the room hourly for a workshop, a private session of your own, a shoot, or a small gathering.</p>
+    </div>
+
+    <div class="rental-grid">
+      <div class="rate-block">
+        <div class="hrs">1 Hour</div>
+        <div class="thb">฿900</div>
+        <div class="tag">First-time trial rate</div>
+      </div>
+      <div class="rate-block">
+        <div class="hrs">5 Hours</div>
+        <div class="thb">฿3,300</div>
+        <div class="tag">Save vs. hourly</div>
+      </div>
+      <div class="rate-block">
+        <div class="hrs">10 Hours</div>
+        <div class="thb">฿6,500</div>
+        <div class="tag">Best value</div>
+      </div>
+    </div>
+
+    <div class="rental-details">
+      <div class="col">
+        <h4>What's included</h4>
+        <ul>
+          <li>Full BASI Systems equipment</li>
+          <li>Clean, well-maintained studio</li>
+          <li>Private, professional environment</li>
+          <li>Up to 3 guests per booking</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Booking</h4>
+        <ul>
+          <li>Available daily, 8:00 AM – 8:00 PM</li>
+          <li>Hourly or full-day booking</li>
+          <li>Flexible — DM us or contact via LINE</li>
+          <li>Confirmed on a first-come basis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rental-cta">
+      <a href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20enquire%20about%20Studio%20Rental.%20Preferred%20date%2C%20time%20%26%20duration%3A%20" target="_blank" rel="noopener" class="btn-secondary" style="border-color:var(--ivory);color:var(--ivory)">Enquire about rental</a>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap book-single">
+    <div class="section-head">
+      <div class="kicker">Reserve your time</div>
+      <h2>Booking happens on LINE.</h2>
+      <p>Tap what you're after below — it opens a chat with us on LINE with your message ready to go. Tell us your preferred date and time, and we'll confirm availability.</p>
+    </div>
+
+    <div class="line-options">
+      <a class="line-option" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20book%20a%20Private%20session.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+        <span><span>Private session</span><span class="lo-sub">One-to-one coaching</span></span>
+        <span class="lo-arrow">→</span>
+      </a>
+      <a class="line-option" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20book%20a%20Duo%20session%20for%202%20people.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+        <span><span>Duo session</span><span class="lo-sub">Bring a friend, two-on-one</span></span>
+        <span class="lo-arrow">→</span>
+      </a>
+      <a class="line-option" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20join%20a%20Group%20session.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+        <span><span>Group session</span><span class="lo-sub">Min. 2 people to run</span></span>
+        <span class="lo-arrow">→</span>
+      </a>
+      <a class="line-option" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20enquire%20about%20Studio%20Rental.%20Preferred%20date%2C%20time%20%26%20duration%3A%20" target="_blank" rel="noopener">
+        <span><span>Studio rental</span><span class="lo-sub">Hourly, by the room</span></span>
+        <span class="lo-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="book-cta-wrap">
+      <a class="book-line" href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.5 2 2 5.6 2 10c0 3.9 3.5 7.2 8.2 7.8.3.1.8.2.9.5.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.6 1-.4 5.6-3.3 7.6-5.7C21 13.4 22 11.8 22 10c0-4.4-4.5-8-10-8z"/></svg>
+        Or just say hi on LINE
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name">Align Body Pilates Studio</div>
+        <div class="sub">Move. Strengthen. Reward yourself.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#equipment">Equipment</a>
+        <a href="#sessions">Sessions</a>
+        <a href="#rental">Studio Rental</a>
+        <a href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">LINE</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Bangkok, Thailand — by appointment only</span>
+      <span>@alignpilatesbangkok</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
