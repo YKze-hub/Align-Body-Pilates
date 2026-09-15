@@ -180,6 +180,106 @@
   td.thb .per{display:block;font-family:'Work Sans',sans-serif;font-size:11.5px;color:var(--brown-soft);margin-top:2px;}
   .best-value{color:var(--sage);font-weight:500;}
 
+  /* =========================
+   Full Body Circuit Class
+   ========================= */
+
+.class-card {
+  width: 100%;
+  padding: 50px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.class-card-content {
+  max-width: 850px;
+}
+
+.class-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.6;
+}
+
+.class-card h3 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 25px;
+}
+
+.class-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 18px;
+  max-width: 720px;
+}
+
+.class-intro {
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+.class-details {
+  margin-top: 38px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.class-detail {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.detail-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.class-note {
+  margin-top: 35px;
+  padding: 25px 30px;
+  background: rgba(0, 0, 0, 0.035);
+}
+
+.class-note strong {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.class-note p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .class-card {
+    padding: 40px 0;
+  }
+
+  .class-detail {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .class-note {
+    padding: 22px;
+  }
+
+}
+
   /* ---------- STUDIO RENTAL ---------- */
   .rental{background:var(--brown);color:var(--ivory);}
   .rental .section-head h2,.rental .section-head .kicker{color:var(--ivory);}
@@ -539,6 +639,60 @@
     </div>
   </div>
 </section>
+
+<section class="circuit" id="circuit">
+
+  <div class="class-card">
+    <div class="class-card-content">
+
+      <div class="class-label">FULL BODY · CIRCUIT</div>
+
+      <h3>Dynamic Pilates Circuit</h3>
+
+      <p class="class-intro">
+        A dynamic full-body Pilates circuit combining Cadillac, F2 Arm Chair,
+        and Reformer work through a diverse range of exercises and movement patterns.
+      </p>
+
+      <p>
+        Move through different stations throughout the class for a complete,
+        energising workout designed to develop strength, core control, stability,
+        mobility, coordination, and endurance.
+      </p>
+
+      <div class="class-details">
+
+        <div class="class-detail">
+          <span class="detail-label">Equipment</span>
+          <span>Cadillac · F2 Arm Chair · 2 Reformers</span>
+        </div>
+
+        <div class="class-detail">
+          <span class="detail-label">Level</span>
+          <span>Intermediate & Advanced</span>
+        </div>
+
+        <div class="class-detail">
+          <span class="detail-label">Format</span>
+          <span>Rotating Circuit · Full Body</span>
+        </div>
+
+      </div>
+
+      <div class="class-note">
+        <strong>Please Note</strong>
+        <p>
+          This is a fast-paced circuit-style class with equipment rotation.
+          Previous Pilates experience is required. Suitable for Intermediate
+          to Advanced participants.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
 
 <section class="rental" id="rental">
   <div class="wrap">
