@@ -226,10 +226,18 @@
   justify-content:center;
   border-bottom:1px solid var(--line);
   margin-bottom:56px;
-  justify-content:flex-start;
 }
-
-
+.cat-tab{
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:14px 20px;
+  font-family:'Fraunces',serif;
+  font-size:16px;
+  color:var(--brown-soft);
+  border-bottom:2px solid transparent;
+  transition:color .2s, border-color .2s;
+}
 .cat-tab:hover{color:var(--brown);}
 .cat-tab.is-active{
   color:var(--brown);
@@ -648,7 +656,7 @@
     <div class="section-head">
       <div class="kicker">Explore the studio</div>
       <h2>Equipment, sessions, and rental.</h2>
-      <p>Scroll down to see the full range of offerings at the studio — from private and duo sessions to small-group trio classes, and hourly rental for your own use.</p>
+      <p>Choose a category below — equipment, sessions, or hourly studio rental.</p>
     </div>
     <div class="cat-tabs">
     <button class="cat-tab is-active" data-panel="equipment">Equipment</button>
@@ -1051,11 +1059,11 @@
           .scrollIntoView({ behavior:'smooth', block:'start' });
       });
     });
-
     // Direct URL like yoursite.com/#equipment
     var hash = location.hash.replace('#','');
     if (hash && document.getElementById('panel-' + hash)) {
       activate(hash);
+      document.querySelector('.explore').scrollIntoView({ behavior:'instant', block:'start' });
     }
   })();
 </script>
