@@ -180,106 +180,174 @@
   td.thb .per{display:block;font-family:'Work Sans',sans-serif;font-size:11.5px;color:var(--brown-soft);margin-top:2px;}
   .best-value{color:var(--sage);font-weight:500;}
 
-  /* =========================
-   Full Body Circuit Class
-   ========================= */
+  
+/* ========================================
+   DYNAMIC PILATES CIRCUIT
+======================================== */
 
-.class-card {
+.circuit {
   width: 100%;
-  padding: 50px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 120px 6vw;
+  box-sizing: border-box;
 }
 
-.class-card-content {
-  max-width: 850px;
+.circuit-inner {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.class-label {
-  font-size: 11px;
+
+/* Header */
+
+.circuit-header {
+  margin-bottom: 60px;
+}
+
+.circuit-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+
+  font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 18px;
-  opacity: 0.6;
-}
 
-.class-card h3 {
-  font-size: clamp(30px, 4vw, 48px);
-  font-weight: 400;
-  line-height: 1.1;
-  margin: 0 0 25px;
-}
-
-.class-card p {
-  font-size: 15px;
-  line-height: 1.8;
-  margin: 0 0 18px;
-  max-width: 720px;
-}
-
-.class-intro {
-  font-size: 17px !important;
-  line-height: 1.7 !important;
-}
-
-.class-details {
-  margin-top: 38px;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.class-detail {
-  display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 20px;
-  padding: 17px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.detail-label {
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
   opacity: 0.55;
 }
 
-.class-note {
-  margin-top: 35px;
-  padding: 25px 30px;
+.circuit h2 {
+  margin: 0;
+
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+
+/* Main content */
+
+.circuit-content {
+  max-width: 900px;
+}
+
+
+/* Description */
+
+.circuit-description {
+  max-width: 760px;
+}
+
+.circuit-description p {
+  margin: 0 0 20px;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.circuit-description .circuit-intro {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* Details */
+
+.circuit-details {
+  margin-top: 55px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.circuit-detail {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+
+  gap: 30px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.circuit-detail span {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  opacity: 0.55;
+}
+
+.circuit-detail p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* Please Note */
+
+.circuit-note {
+  max-width: 760px;
+
+  margin-top: 45px;
+  padding: 28px 32px;
+
   background: rgba(0, 0, 0, 0.035);
 }
 
-.class-note strong {
+.circuit-note > span {
   display: block;
+
+  margin-bottom: 12px;
+
   font-size: 10px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 10px;
 }
 
-.class-note p {
+.circuit-note p {
   margin: 0;
+
   font-size: 14px;
+  line-height: 1.8;
 }
 
-/* Mobile */
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 600px) {
 
-  .class-card {
-    padding: 40px 0;
+  .circuit {
+    padding: 80px 6vw;
   }
 
-  .class-detail {
+  .circuit-header {
+    margin-bottom: 40px;
+  }
+
+  .circuit h2 {
+    font-size: 38px;
+  }
+
+  .circuit-description .circuit-intro {
+    font-size: 16px;
+  }
+
+  .circuit-detail {
     grid-template-columns: 1fr;
-    gap: 6px;
+
+    gap: 7px;
+
+    padding: 18px 0;
   }
 
-  .class-note {
-    padding: 22px;
+  .circuit-note {
+    padding: 24px 22px;
   }
 
 }
-
   /* ---------- STUDIO RENTAL ---------- */
   .rental{background:var(--brown);color:var(--ivory);}
   .rental .section-head h2,.rental .section-head .kicker{color:var(--ivory);}
@@ -640,59 +708,72 @@
   </div>
 </section>
 
+<!-- Dynamic Pilates Circuit -->
 <section class="circuit" id="circuit">
 
-  <div class="class-card">
-    <div class="class-card-content">
+  <div class="circuit-inner">
 
-      <div class="class-label">FULL BODY · CIRCUIT</div>
+    <div class="circuit-header">
+      <span class="circuit-eyebrow">FULL BODY · CIRCUIT</span>
 
-      <h3>Dynamic Pilates Circuit</h3>
+      <h2>Dynamic Pilates Circuit</h2>
+    </div>
 
-      <p class="class-intro">
-        A dynamic full-body Pilates circuit combining Cadillac, F2 Arm Chair,
-        and Reformer work through a diverse range of exercises and movement patterns.
-      </p>
+    <div class="circuit-content">
 
-      <p>
-        Move through different stations throughout the class for a complete,
-        energising workout designed to develop strength, core control, stability,
-        mobility, coordination, and endurance.
-      </p>
+      <div class="circuit-description">
 
-      <div class="class-details">
+        <p class="circuit-intro">
+          A dynamic full-body Pilates circuit combining Cadillac, F2 Arm Chair,
+          and Reformer work through a diverse range of exercises and movement patterns.
+        </p>
 
-        <div class="class-detail">
-          <span class="detail-label">Equipment</span>
-          <span>Cadillac · F2 Arm Chair · 2 Reformers</span>
+        <p>
+          Move through different stations throughout the class for a complete,
+          energising workout designed to develop strength, core control,
+          stability, mobility, coordination, and endurance.
+        </p>
+
+      </div>
+
+
+      <div class="circuit-details">
+
+        <div class="circuit-detail">
+          <span>Equipment</span>
+          <p>Cadillac · F2 Arm Chair · 2 Reformers</p>
         </div>
 
-        <div class="class-detail">
-          <span class="detail-label">Level</span>
-          <span>Intermediate & Advanced</span>
+        <div class="circuit-detail">
+          <span>Level</span>
+          <p>Intermediate &amp; Advanced</p>
         </div>
 
-        <div class="class-detail">
-          <span class="detail-label">Format</span>
-          <span>Rotating Circuit · Full Body</span>
+        <div class="circuit-detail">
+          <span>Format</span>
+          <p>Rotating Circuit · Full Body</p>
         </div>
 
       </div>
 
-      <div class="class-note">
-        <strong>Please Note</strong>
+
+      <div class="circuit-note">
+
+        <span>Please Note</span>
+
         <p>
           This is a fast-paced circuit-style class with equipment rotation.
           Previous Pilates experience is required. Suitable for Intermediate
           to Advanced participants.
         </p>
+
       </div>
 
     </div>
+
   </div>
 
 </section>
-
 
 <section class="rental" id="rental">
   <div class="wrap">
