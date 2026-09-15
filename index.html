@@ -69,7 +69,7 @@
   /* ---------- HERO ---------- */
   .hero{padding:76px 0 96px;}
   .hero-grid{
-    display:grid;grid-template-columns:1.05fr 0.95fr;gap:64px;align-items:center;
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:64px;align-items:center;
   }
   .hero h1{
     font-size:clamp(38px,4.6vw,58px);
@@ -97,21 +97,52 @@
   }
   .btn-secondary:hover{background:var(--brown);color:var(--ivory);}
 
-  .photo-frame{
-    position:relative;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
-    background:
-      repeating-linear-gradient(135deg, rgba(43,35,28,0.05) 0 2px, transparent 2px 14px),
-      linear-gradient(155deg, #DED2B4 0%, #C9B98F 55%, #AD8752 100%);
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--line);
-  }
-  .photo-frame .frame-inner{
-    text-align:center;color:var(--white);
-  }
-  .photo-frame svg{width:34px;height:34px;margin:0 auto 10px;opacity:0.85;}
-  .photo-frame .label{font-size:12.5px;letter-spacing:0.04em;opacity:0.9;}
-  .photo-frame .sub-label{font-size:11px;opacity:0.65;margin-top:4px;}
+   /* 容器：改成横版比例，去掉 flex 居中（因为子元素现在都是绝对定位） */
+.photo-frame{
+  position:relative;
+  aspect-ratio: 16 / 9;          /* 原来是 4/5 */
+  border-radius: 2px;
+  overflow:hidden;
+  background:
+    repeating-linear-gradient(135deg, rgba(43,35,28,0.05) 0 2px, transparent 2px 14px),
+    linear-gradient(155deg, #DED2B4 0%, #C9B98F 55%, #AD8752 100%);
+  border:1px solid var(--line);
+  /* 删掉原来的 display:flex; align-items:center; justify-content:center; */
+}
 
+/* 新增：图片铺满 */
+.photo-frame img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  z-index:1;
+}
+/* 加载态：mascot 居中浮在图片上方 */
+.mascot-wrap{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: opacity .5s ease;
+  pointer-events:none;
+}
+
+/* 图片加载完成后，mascot 淡出 */
+.photo-frame.loaded .mascot-wrap{
+  opacity:0;
+}
+
+/* mascot SVG 尺寸 */
+.mascot-wrap svg{
+  width:96px;
+  height:auto;
+}
   /* ---------- THREE WAYS ---------- */
   .pillars{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .pillars-grid{
@@ -817,19 +848,19 @@
     </div>
 
     <div class="line-options">
-      <a class="line-option reveal" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20book%20a%20Private%20session.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+      <a class="line-option reveal" href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">
         <span><span>Private session</span><span class="lo-sub">One-to-one coaching</span></span>
         <span class="lo-arrow">→</span>
       </a>
-      <a class="line-option reveal" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20book%20a%20Duo%20session%20for%202%20people.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+      <a class="line-option reveal" href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">
         <span><span>Duo session</span><span class="lo-sub">Bring a friend, two-on-one</span></span>
         <span class="lo-arrow">→</span>
       </a>
-      <a class="line-option reveal" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20join%20a%20Trio%20session.%20Preferred%20date%20%26%20time%3A%20" target="_blank" rel="noopener">
+      <a class="line-option reveal" href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">
         <span><span>Trio session</span><span class="lo-sub">Small group, up to 3</span></span>
         <span class="lo-arrow">→</span>
       </a>
-      <a class="line-option reveal" href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20enquire%20about%20Studio%20Rental.%20Preferred%20date%2C%20time%20%26%20duration%3A%20" target="_blank" rel="noopener">
+      <a class="line-option reveal" href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener">
         <span><span>Studio rental</span><span class="lo-sub">Hourly, by the room</span></span>
         <span class="lo-arrow">→</span>
       </a>
@@ -901,5 +932,22 @@
     els.forEach(function(el){ io.observe(el); });
   })();
 </script>
+
+<script>
+  (function(){
+    document.querySelectorAll('.photo-frame > img').forEach(function(img){
+      var frame = img.closest('.photo-frame');
+      if (!frame) return;
+      if (img.complete && img.naturalWidth > 0) {
+        frame.classList.add('loaded');
+      } else {
+        img.addEventListener('load', function(){
+          frame.classList.add('loaded');
+        });
+      }
+    });
+  })();
+</script>
+
 </body>
 </html>
