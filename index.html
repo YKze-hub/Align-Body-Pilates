@@ -535,13 +535,27 @@
       </span>
     </a>
     <div class="navlinks">
-      <a href="#equipment">Equipment</a>
-      <a href="#sessions">Sessions</a>
-      <a href="#rental">Studio Rental</a>
+      <a href="#equipment" data-tab-link="equipment">Equipment</a>
+      <a href="#sessions" data-tab-link="sessions">Sessions</a>
+      <a href="#rental" data-tab-link="rental">Studio Rental</a>
       <a href="#book" class="nav-cta">Book a session</a>
     </div>
   </nav>
 </header>
+
+<section class="explore">
+  <div class="cat-tabs">
+    <button class="cat-tab is-active" data-panel="equipment">Equipment</button>
+    <button class="cat-tab" data-panel="sessions">Sessions</button>
+    <button class="cat-tab" data-panel="rental">Studio Rental</button>
+  </div>
+
+  <div class="cat-panels">
+    <div class="cat-panel is-active" id="panel-equipment">…</div>
+    <div class="cat-panel" id="panel-sessions">…</div>
+    <div class="cat-panel" id="panel-rental">…</div>
+  </div>
+</section>
 
 <section class="hero" id="top" style="position:relative;overflow:hidden;">
   <div class="hero-blob hero-blob-1"></div>
@@ -825,7 +839,7 @@
     </div>
 
     <div class="rental-cta">
-      <a href="https://line.me/R/oaMessage/%40863wmdzp/?Hi%21%20I%27d%20like%20to%20enquire%20about%20Studio%20Rental.%20Preferred%20date%2C%20time%20%26%20duration%3A%20" target="_blank" rel="noopener" class="btn-secondary" style="border-color:var(--ivory);color:var(--ivory)">Enquire about rental</a>
+      <a href="https://line.me/R/ti/p/@863wmdzp" target="_blank" rel="noopener" class="btn-secondary" style="border-color:var(--ivory);color:var(--ivory)">Enquire about rental</a>
     </div>
   </div>
 </section>
@@ -946,6 +960,50 @@
         });
       }
     });
+  })();
+</script>
+
+<script>
+  (function(){
+    var tabs   = document.querySelectorAll('.cat-tab');
+    var panels = document.querySelectorAll('.cat-panel');
+
+    function activate(name){
+      tabs.forEach(function(t){
+        t.classList.toggle('is-active', t.dataset.panel === name);
+      });
+      panels.forEach(function(p){
+        p.classList.toggle('is-active', p.id === 'panel-' + name);
+      });
+    }
+
+    // Clicks on the in-page tabs
+    tabs.forEach(function(tab){
+      tab.addEventListener('click', function(){
+        activate(tab.dataset.panel);
+        history.replaceState(null, '', '#' + tab.dataset.panel);
+        // scroll the explore section into view
+        document.querySelector('.explore')
+          .scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    });
+
+    // Clicks on the top nav
+    document.querySelectorAll('[data-tab-link]').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        activate(link.dataset.tabLink);
+        history.replaceState(null, '', '#' + link.dataset.tabLink);
+        document.querySelector('.explore')
+          .scrollIntoView({ behavior:'smooth', block:'start' });
+      });
+    });
+
+    // Direct URL like yoursite.com/#equipment
+    var hash = location.hash.replace('#','');
+    if (hash && document.getElementById('panel-' + hash)) {
+      activate(hash);
+    }
   })();
 </script>
 
