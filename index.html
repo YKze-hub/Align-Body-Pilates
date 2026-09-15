@@ -187,8 +187,8 @@
 
 .circuit {
   width: 100%;
-  padding: 120px 6vw;
   box-sizing: border-box;
+  padding: 70px 6vw;
 }
 
 .circuit-inner {
@@ -196,55 +196,42 @@
   margin: 0 auto;
 }
 
-
-/* Header */
-
 .circuit-header {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .circuit-eyebrow {
   display: block;
-  margin-bottom: 18px;
-
+  margin-bottom: 14px;
   font-size: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-
   opacity: 0.55;
 }
 
 .circuit h2 {
   margin: 0;
-
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(32px, 4.5vw, 56px);
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.1;
 }
-
-
-/* Main content */
 
 .circuit-content {
-  max-width: 900px;
+  max-width: 850px;
 }
 
-
-/* Description */
-
 .circuit-description {
-  max-width: 760px;
+  max-width: 750px;
 }
 
 .circuit-description p {
-  margin: 0 0 20px;
-
+  margin: 0 0 18px;
   font-size: 15px;
   line-height: 1.8;
 }
 
 .circuit-description .circuit-intro {
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.7;
 }
 
@@ -252,83 +239,70 @@
 /* Details */
 
 .circuit-details {
-  margin-top: 55px;
-
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .circuit-detail {
   display: grid;
-  grid-template-columns: 160px 1fr;
-
-  gap: 30px;
-
-  padding: 20px 0;
-
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  grid-template-columns: 140px 1fr;
+  gap: 25px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .circuit-detail span {
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-
   opacity: 0.55;
 }
 
 .circuit-detail p {
   margin: 0;
-
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 
-/* Please Note */
+/* Note */
 
 .circuit-note {
-  max-width: 760px;
-
-  margin-top: 45px;
-  padding: 28px 32px;
-
+  max-width: 750px;
+  margin-top: 35px;
+  padding: 22px 26px;
   background: rgba(0, 0, 0, 0.035);
 }
 
 .circuit-note > span {
   display: block;
-
-  margin-bottom: 12px;
-
+  margin-bottom: 8px;
   font-size: 10px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .circuit-note p {
   margin: 0;
-
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
 
-/* ========================================
-   MOBILE
-======================================== */
+/* Mobile */
 
 @media (max-width: 600px) {
 
   .circuit {
-    padding: 80px 6vw;
+    padding: 55px 6vw;
   }
 
   .circuit-header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .circuit h2 {
-    font-size: 38px;
+    font-size: 36px;
   }
 
   .circuit-description .circuit-intro {
@@ -337,14 +311,11 @@
 
   .circuit-detail {
     grid-template-columns: 1fr;
-
-    gap: 7px;
-
-    padding: 18px 0;
+    gap: 5px;
   }
 
   .circuit-note {
-    padding: 24px 22px;
+    padding: 20px;
   }
 
 }
